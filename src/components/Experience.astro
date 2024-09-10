@@ -1,0 +1,39 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+
+const EXPERIENCE = [
+    {
+        date:'2024',
+        title: "Blog sobre serie Twin Peaks",
+        description: "Aplicación web desarrollada con nextjs",
+        link: '#'
+    },
+    {
+        date:'Marzo 2022',
+        title: "Aplicación Chat",
+        description: "Desarrollo para blah blah2",
+        link: '#'
+    },
+    {
+        date:' ',
+        title: "Eccomerce de app ",
+        description: "Desarrollo para blah blah3",
+        link: '#'
+    },
+]
+---
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-2">   
+    {
+        EXPERIENCE.map(experience =>(
+            <li class="mb-10 ms-4">
+                <ExperienceItem {...experience} />
+            </li>
+        )
+        
+        )
+    }               
+  
+</ol>
+
+
+
