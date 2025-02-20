@@ -1,54 +1,96 @@
 ---
 import ReactIcon from './icons/ReactIcon.astro'
 import TailwindIcon from './icons/TailwindIcon.astro'
+import PythonIcon from './icons/PythonIcon.astro'
+import GitHub from './icons/GitHub.astro'
+import AstroIcon from './icons/AstroIcon.astro'
+
 const TAGS = {
     REACT:{
         name: 'React.js',
-        class: 'bg-blue-500 text-white',
+        class: 'bg-slate-600 text-[#f8f8ff]',
         icon: ReactIcon,
     },
     TAILWIND: {
         name: 'Tailwind CSS',
-        class: 'bg-white text-[#73bcf6]',
+        class: 'bg-slate-600 text-[#f8f8ff]',
         icon: TailwindIcon,
-
-        
-}
+    },
+    PYTHON: {
+        name: 'Python',
+        class: 'bg-slate-600 text-[#f8f8ff]',
+        icon: PythonIcon    
+    },
+    ASTRO: {
+        name: 'Astro',
+        class: 'bg-slate-600 text-[#f8f8ff]',
+        icon: AstroIcon    
+    }
 }
 
 
 const PROJECTS = [
     {
-        title: 'Proyecto Buscador de Cryptomonedas',
-        description: 'app desarrollada para poner en practica el consumo de API y la muestra de Datos',
-        link: 'https://crypto-tracking-d1kqyhxne-ignajos-projects.vercel.app/',
-        github:'#',
-        image: '/projects/crypto.webp',
-        tags: [TAGS.REACT,TAGS.TAILWIND]
+        title: 'Gestor de Archivos Simple',
+        description: "Herramienta de escritorio para el flujo de trabajo de Servicios Notariales Ltda. Desarrollada en Tkinter que facilita la gestión de ficheros por medio de una interfaz gráfica de arrastrar y soltar, con la finalidad de reorganizar los documentos firmados digitalmente, manteniendo la estructura de carpetas original",
+        link: 'https://github.com/IgnaJo/files_manager',
+        github:'https://github.com/IgnaJo/files_manager',
+        image: '/projects/file_manager.png',
+        tags: [TAGS.PYTHON,TAGS.TAILWIND]
+
+
+    },
+    {
+        title: 'Rediseño del sitio de la Segunda Notaria de Santiago',
+        description: 'Proyecto no oficial de rediseño del sitio web de la Segunda Notaria de Santiago, con el objetivo de mejorar la experiencia de usuario y la accesibilidad del sitio, aprovechando los beneficios de la tecnología moderna, como Island de Astro framework y Supabase como almacen de objetos.',
+        link: 'https://astro-notaria.vercel.app/',
+        github:'https://github.com/IgnaJo/astro-notaria',
+        image: '/projects/notariaMock.webp',
+        tags: [TAGS.REACT,TAGS.TAILWIND,TAGS.ASTRO]
 
 
     }
+
 ]
 ---
 
 {
-    PROJECTS.map(({image, title, description, tags}) => (
+    PROJECTS.map(({image, title, description, tags, link, github}) => (
     <article>
             <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
             <p class="text-lg mb-4 text-pretty">{description}</p>
             <ul class="flex gap-x-2 flex-row">
                 {tags.map((tag) => (
                     <li>
-                        <span class={`flex gap-x-2 rounded-full text-xs  ${tag.class} py-2 px-1`}>
+                        <span class={`flex gap-x-2 rounded-full text-xs  ${tag.class} py-2 px-2`}>
                         <tag.icon class="size-4"/>
                         {tag.name}
                         </span>
+
+
                     </li>
-               ))}
+               ))
+               
+            }
+            <a href={`${github}`} target="www" class="bg-blue-100 hover:bg-blue-200 text-blue-800 text-xs font-semibold me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-white border border-blue-100 inline-flex items-center justify-center">
+                <GitHub class="size-3 md:size-5 mr-1 text-[#f8f8ff]"/>GitHub</a>
             </ul>
-            <img
-            class="rounded shadow-2xl shadow-white/10"
-            src={image} alt="captura del proyecto de"/>
+            
+            
+
+            <div class="mt-5 mb-5">
+                <a href={`${link}` }target="www">
+                <img
+            class="rounded shadow-2xl shadow-white/10 mt-2 transform transition-transform duration-300 hover:scale-105"
+            src={image} alt="captura del proyecto de" />
+            </a>
+            </div>
+            
+            
+            <div></div>
+
+
+
         </article>
     ))
 }
