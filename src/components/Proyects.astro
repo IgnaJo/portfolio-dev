@@ -4,10 +4,11 @@ import TailwindIcon from './icons/TailwindIcon.astro'
 import PythonIcon from './icons/PythonIcon.astro'
 import GitHub from './icons/GitHub.astro'
 import AstroIcon from './icons/AstroIcon.astro'
+import CustomTkinter from './icons/CustomTkinterIcon.astro'
 
 const TAGS = {
     REACT:{
-        name: 'React.js',
+        name: 'React',
         class: 'bg-slate-600 text-[#f8f8ff]',
         icon: ReactIcon,
     },
@@ -25,6 +26,11 @@ const TAGS = {
         name: 'Astro',
         class: 'bg-slate-600 text-[#f8f8ff]',
         icon: AstroIcon    
+    },
+    TKINTER: {
+        name: 'CustomTkinter',
+        class: 'bg-slate-600 text-[#f8f8ff]',
+        icon: CustomTkinter    
     }
 }
 
@@ -36,7 +42,7 @@ const PROJECTS = [
         link: 'https://github.com/IgnaJo/files_manager',
         github:'https://github.com/IgnaJo/files_manager',
         image: '/projects/file_manager.png',
-        tags: [TAGS.PYTHON,TAGS.TAILWIND]
+        tags: [TAGS.PYTHON, TAGS.TKINTER]
 
 
     },
@@ -46,7 +52,7 @@ const PROJECTS = [
         link: 'https://astro-notaria.vercel.app/',
         github:'https://github.com/IgnaJo/astro-notaria',
         image: '/projects/notariaMock.webp',
-        tags: [TAGS.REACT,TAGS.TAILWIND,TAGS.ASTRO]
+        tags: [TAGS.ASTRO,TAGS.TAILWIND,TAGS.REACT]
 
 
     }
@@ -72,8 +78,8 @@ const PROJECTS = [
                ))
                
             }
-            <a href={`${github}`} target="www" class="bg-blue-100 hover:bg-blue-200 text-blue-800 text-xs font-semibold me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-white border border-blue-100 inline-flex items-center justify-center">
-                <GitHub class="size-3 md:size-5 mr-1 text-[#f8f8ff]"/>GitHub</a>
+            <a href={`${github}`} target="www" class="group bg-slate-600 text-[#f8f8ff] hover:bg-yellow-300 hover:text-slate-600 text-xs font-semibold me-2 px-2.5 py-0.5 rounded-full  border border-blue-100 inline-flex items-center justify-center">
+                <GitHub class="size-3 md:size-5 mr-1 group-hover:fill-[#708090]  "/>GitHub</a>
             </ul>
             
             
