@@ -20,7 +20,7 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="relative text-black dark:text-white" >
+	<body class="relative text-white dark:text-[#f8f8ff]" >
  
 		<Header client:load />
 		<slot />
@@ -30,7 +30,7 @@ const { title } = Astro.props;
 
 <style is:global>
 	:root {
-		color-scheme: light dark;
+		color-scheme:  dark;
 		
 	}
 	html {
